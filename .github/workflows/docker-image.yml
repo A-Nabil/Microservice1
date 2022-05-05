@@ -11,10 +11,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./microservice1/
 
     steps:
     - uses: actions/checkout@v3
       with:
-        context: Microservice1
+        context: .
     - name: Build the Docker image
       run: docker build Microservice1/. --file Dockerfile --tag my-image-name:$(date +%s)
