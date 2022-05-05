@@ -39,3 +39,5 @@ jobs:
           context: "{{defaultContext}}:Microservice1"
           push: true
           tags: a7medit/k8s:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
