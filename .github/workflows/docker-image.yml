@@ -36,5 +36,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: "{{defaultContext}}:Microservice1"
           push: true
           tags: a7medit/k8s:latest
