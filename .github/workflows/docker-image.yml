@@ -36,6 +36,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          file: ./build/Microservice1/Dockerfile
+          file: ./Microservice1/Dockerfile
           push: true
           tags: a7medit/k8s:latest
