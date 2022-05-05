@@ -40,8 +40,8 @@ namespace Microservice1
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
             }
+            app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Microservice1 v1"));
 
             app.UseRouting();
