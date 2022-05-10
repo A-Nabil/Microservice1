@@ -37,5 +37,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: ./Microservice1/Dockerfile
+          platforms: linux/arm64
           push: true
           tags: a7medit/k8s:latest
