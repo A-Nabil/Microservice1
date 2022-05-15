@@ -39,4 +39,4 @@ jobs:
           file: ./Microservice1/Dockerfile
           platforms: linux/arm64
           push: true
-          tags: a7medit/k8s:latest
+          tags: a7medit/k8s:microservice1
