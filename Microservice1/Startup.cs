@@ -1,3 +1,4 @@
+using Microservice1.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,8 @@ namespace Microservice1
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Microservice1", Version = "v1" });
             });
             services.AddHealthChecks();
+
+            services.AddSingleton<IService2Service, Service2Service>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

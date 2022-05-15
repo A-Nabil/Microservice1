@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microservice1.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Microservice1.Controllers
@@ -13,10 +14,12 @@ namespace Microservice1.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private IService2Service _service2Service;
 
-        public TestController(ILogger<WeatherForecastController> logger)
+        public TestController(ILogger<WeatherForecastController> logger, IService2Service service2Service)
         {
             _logger = logger;
+            _service2Service = service2Service;
         }
 
         [HttpGet]
@@ -24,6 +27,14 @@ namespace Microservice1.Controllers
         public ActionResult Get()
         {
             return Ok(Data);
+        }
+
+        [HttpGet]
+        [Route("service2")]
+        public ActionResult GetfromExternal()
+        {
+            var data = _service2Service.getValuesfromService2();
+            return Ok(data);
         }
     }
 }
