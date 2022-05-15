@@ -17,6 +17,7 @@ namespace Microservice1.Services
         public async Task<List<string>> getValuesfromService2()
         {
             string url = "http://microservice2-service/api/data";
+            url = "http://localhost:5555/api/data";
 
             var requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
 

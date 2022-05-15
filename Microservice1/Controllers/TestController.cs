@@ -1,6 +1,7 @@
 ﻿using Microservice1.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Microservice1.Controllers
 {
@@ -31,9 +32,9 @@ namespace Microservice1.Controllers
 
         [HttpGet]
         [Route("service2")]
-        public ActionResult GetfromExternal()
+        public async Task<ActionResult> GetfromExternalAsync()
         {
-            var data = _service2Service.getValuesfromService2();
+            var data = await _service2Service.getValuesfromService2();
             return Ok(data);
         }
     }
