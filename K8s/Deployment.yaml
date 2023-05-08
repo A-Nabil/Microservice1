@@ -22,6 +22,7 @@ spec:
       containers:
       - name:  microservice1
         image:  a7medit/k8s
+        imagePullPolicy: Always 
         resources:
           requests:
             cpu: 100m
