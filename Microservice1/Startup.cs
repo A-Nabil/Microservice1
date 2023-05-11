@@ -1,4 +1,5 @@
 using Microservice1.Services;
+using Microservice1.Tools;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +40,10 @@ namespace Microservice1
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //Add our new middleware to the pipeline
+            app.UseMiddleware<RequestResponseLoggingMiddleware>();
+
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Microservice1 v1"));
 
